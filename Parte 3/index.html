@@ -31,7 +31,19 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 // CREA TU FUNCION challenge1 aqui 
 
-
+function challenge1(){
+    var iBotones = prompt("Cuantos botones quiere?");
+    for(var i = 0; i < iBotones; i++){
+        var target = document.getElementById("dummy")
+        var aux = document.createElement("button")
+        if(i > nombres.length - 1){
+        aux.textContent = "no hay nombre"
+        }else{
+            aux.textContent = nombres[i];
+        }
+        target.appendChild(aux)
+    }
+}
 
 // ************** PARTE 2    **************
 
@@ -41,7 +53,11 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 **/
 
 // CREA TU FUNCION challenge2 2 aquí.
-
+function challenge2(){
+    for(var i = 0; i < nombres.length; i++){
+        console.log(nombres[i].toUpperCase());
+    }
+}
 
 
 // ************** PARTE 3    **************
@@ -53,6 +69,8 @@ A) Escribe un constructor que te permita generar objetos de tipo "Dog" que recib
 1) Nombre
 2) Color
 3) Raza
+
+
 
 
 B) Utilizando el constructor crea 3 objectos con diferentes valores y escribe en consola cada objeto.
@@ -68,8 +86,29 @@ Invoca la función para validar su funcionalidad.
 
 */
 
+function Dog(sNombre, sColor, sRaza){
+
+    this.Nombre = sNombre;
+    this.Color = sColor;
+    this.Raza = sRaza;
+
+    function printInfo(){
+    console.log("Nombre: " + this.Nombre + "  Color: " + this.Color + "  Raza: " + this.Raza);
+    }   
+
+}
+
+var perro1 = new Dog("Milla", "Cafe", "Boyero de Berna");
+console.log(perro1);
+var perro2 = new Dog("Iska", "Blanco", "Boyero de Berna");
+console.log(perro2);
+var perro3 = new Dog("Jacques", "Negro", "Boyedo de Berna");
+console.log(perro3);
 
 
+
+
+perro1.printInfo();
 
 
 </script>
